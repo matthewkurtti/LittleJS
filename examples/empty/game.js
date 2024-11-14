@@ -11,6 +11,15 @@ function gameInit()
 {
     // called once after the engine starts up
     // setup the game
+    
+    // create bricks
+    for(let x=0; x<=20; x++)
+    for(let y=0; y<=20; y++)
+    {
+        const brick = new EngineObject(vec2(x,y));
+        brick.color = randColor(); // give brick a random color
+    }
+
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -39,7 +48,7 @@ function gameRenderPost()
 {
     // called after objects are rendered
     // draw effects or hud that appear above all objects
-    drawTextScreen('Hello World!', mainCanvasSize.scale(.5), 80);
+    // drawTextScreen('Hello World!', mainCanvasSize.scale(.5), 80);
 }
 
 ///////////////////////////////////////////////////////////////////////////////
