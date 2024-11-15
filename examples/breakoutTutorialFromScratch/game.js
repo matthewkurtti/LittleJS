@@ -13,12 +13,15 @@ function gameInit()
     // setup the game
     
     // create bricks
-    for(let x=0; x<=20; x++)
-    for(let y=0; y<=20; y++)
+    const levelSize = vec2(20,20);
+    for(let x=0; x<=levelSize.x; x+=2)
+    for(let y=0; y<=levelSize.y; y++)
     {
-        const brick = new EngineObject(vec2(x,y));
+        const brick = new EngineObject(vec2(x,y), vec2(2,1));
         brick.color = randColor(); // give brick a random color
     }
+
+    setCameraPos(levelSize.scale(.5)); // center camera in level
 
 }
 
